@@ -3,19 +3,10 @@
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 1.7vw;
+  font-size: 20px;
   text-align: right;
   background-color: #000;
   color: #fff;
-}
-
-
-/* setting a max font size */
-
-@media screen and (min-width: 1200px) {
-  body {
-    font-size: 20px;
-  }
 }
 
 
@@ -133,26 +124,13 @@ a:hover {
 /* The game content div contains the sidebar and the game board */
 
 .game-content {
-  display: -webkit-flex;
-  display: flex;
   margin: auto;
   justify-content: center;
-  display: table;
   padding: 1%;
 }
 
 .sidebar {
-  display: table-cell;
-  vertical-align: middle;
   padding: 1%;
-}
-
-.timer {
-  white-space: nowrap;
-}
-
-.move-counter {
-  white-space: nowrap;
 }
 
 @-webkit-keyframes flicker-box {
@@ -365,6 +343,8 @@ indents in it, yet still allows responsiveness */
 
 .button {
   cursor: pointer;
+  min-width: 48px;
+  min-height: 48px;
 }
 
 .button:hover {
@@ -375,6 +355,15 @@ indents in it, yet still allows responsiveness */
 
 /* below is popup window and mask styles */
 
+.popup-window {
+  display: none;
+  z-index: 9999;
+  max-width: 750px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
 .mask {
   position: absolute;
   left: 0;
@@ -382,18 +371,4 @@ indents in it, yet still allows responsiveness */
   z-index: 9000;
   background-color: #000;
   display: none;
-}
-
-.popup-window {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-  z-index: 9999;
-  padding: 20px;
-  max-width: 750px;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
 }
