@@ -1,4 +1,6 @@
-/* included my favorite fonts, retrieved from Google */
+/*
+ * General
+ */
 
 body {
   font-family: 'Lato', sans-serif;
@@ -8,6 +10,108 @@ body {
   background-color: #000;
   color: #fff;
 }
+
+img {
+  width: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 10vw;
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+  color: #000;
+  text-shadow: 0px 0px 20px #000;
+}
+
+.h1-flicker {
+  -webkit-animation-name: flicker;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 2s;
+  animation-name: flicker;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-duration: 2s;
+}
+
+a {
+  font-family: 'Comfortaa', cursive;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #c9f8ff;
+  text-shadow: 0px 0px 20px #3de5ff;
+}
+
+.game-content {
+  margin: auto;
+  justify-content: center;
+  padding: 1%;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #c9f8ff;
+  text-shadow: 0px 0px 20px #3de5ff;
+}
+
+
+/* Large Screen Mode */
+
+@media (min-width: 801px) {
+  h1 {
+    font-size: 80px;
+  }
+  .game-content {
+    display: -webkit-flex;
+    display: flex;
+    display: table;
+  }
+  .sidebar {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .popup-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+/* Small Screen Mode */
+
+@media (max-width: 800px) {
+  .sidebar {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+  }
+  .sidebar-content {
+    min-width: 48px;
+    margin: .5% 5%;
+  }
+  .popup-window {
+    white-space: nowrap;
+    position: fixed;
+    top: 25%;
+    width: 100%;
+  }
+}
+
+
+/*
+ * Animations
+ */
 
 
 /* flicker effect on glowing text to make it look like a neon light */
@@ -74,64 +178,8 @@ body {
   }
 }
 
-h1 {
-  font-size: 6.7vw;
-  font-family: 'Comfortaa', cursive;
-  text-align: center;
-  color: #000;
-  text-shadow: 0px 0px 20px #000;
-}
 
-
-/* setting a maximum font size for h1, so it doesn't get too big. */
-
-@media screen and (min-width: 1200px) {
-  h1 {
-    font-size: 80px;
-  }
-}
-
-img {
-  width: 100%;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-a {
-  font-family: 'Comfortaa', cursive;
-  font-size: inherit;
-  color: inherit;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #c9f8ff;
-  text-shadow: 0px 0px 20px #3de5ff;
-}
-
-.h1-flicker {
-  -webkit-animation-name: flicker;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 2s;
-  animation-name: flicker;
-  animation-fill-mode: forwards;
-  animation-delay: 0s;
-  animation-duration: 2s;
-}
-
-
-/* The game content div contains the sidebar and the game board */
-
-.game-content {
-  margin: auto;
-  justify-content: center;
-  padding: 1%;
-}
-
-.sidebar {
-  padding: 1%;
-}
+/* Flicker effect on game board to make it look backlit */
 
 @-webkit-keyframes flicker-box {
   0% {
@@ -182,44 +230,7 @@ a:hover {
 }
 
 
-/* background images are all my own artwork */
-
-.game-board {
-  display: -webkit-flex;
-  display: flex;
-  max-width: 900px;
-  padding: 2%;
-  padding-bottom: 3%;
-  background-image: url("../imgs/game_board.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  box-shadow: 15px 15px 20px #000;
-}
-
-.game-board-flicker {
-  -webkit-animation-name: flicker-box;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 2s;
-  animation-name: flicker-box;
-  animation-fill-mode: forwards;
-  animation-delay: 0s;
-  animation-duration: 2s;
-}
-
-
-/* background image assigned to card slots to make the grid look like it has
-indents in it, yet still allows responsiveness */
-
-.card-slot {
-  max-width: 200px;
-  background-image: url("../imgs/card_slot.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 2%;
-  margin: 5%;
-}
+/* bounce on click for cards */
 
 @-webkit-keyframes bounce {
   0% {
@@ -245,20 +256,6 @@ indents in it, yet still allows responsiveness */
   }
 }
 
-.card-front {
-  display: none;
-  -webkit-animation-name: bounce;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: .1s;
-  animation-name: bounce;
-  animation-delay: 0s;
-  animation-duration: .1s;
-}
-
-.card-back:hover {
-  box-shadow: 0px 0px 10px #96f4ff;
-}
-
 
 /* incorrect match animation */
 
@@ -282,15 +279,6 @@ indents in it, yet still allows responsiveness */
     transform: translateY(0px);
     opacity: 1;
   }
-}
-
-.whoops {
-  -webkit-animation-name: whoops;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: .4s;
-  animation-name: whoops;
-  animation-delay: 0s;
-  animation-duration: .4s;
 }
 
 
@@ -332,6 +320,78 @@ indents in it, yet still allows responsiveness */
   }
 }
 
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  padding: 1%;
+}
+
+.timer {
+  white-space: nowrap;
+}
+
+
+/*
+ * Game Board
+ */
+
+
+/* background images are all my own artwork */
+
+.game-board {
+  display: -webkit-flex;
+  display: flex;
+  max-width: 900px;
+  padding: 2%;
+  padding-bottom: 3%;
+  background-image: url("../imgs/game_board.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 15px 15px 20px #000;
+}
+
+.game-board-flicker {
+  -webkit-animation-name: flicker-box;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 2s;
+  animation-name: flicker-box;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-duration: 2s;
+}
+
+
+/* background image assigned to card slots to make the grid look like it has
+indents in it, yet still allows responsiveness */
+
+.card-slot {
+  max-width: 200px;
+  background-image: url("../imgs/card_slot.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 2%;
+  margin: 5%;
+}
+
+.card-front {
+  display: none;
+  -webkit-animation-name: bounce;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: .1s;
+  animation-name: bounce;
+  animation-delay: 0s;
+  animation-duration: .1s;
+}
+
+.card-back:hover {
+  box-shadow: 0px 0px 10px #96f4ff;
+}
+
 .yay {
   -webkit-animation-name: yay;
   -webkit-animation-delay: 0s;
@@ -341,19 +401,19 @@ indents in it, yet still allows responsiveness */
   animation-duration: .4s;
 }
 
-.button {
-  cursor: pointer;
-  min-width: 48px;
-  min-height: 48px;
+.whoops {
+  -webkit-animation-name: whoops;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: .4s;
+  animation-name: whoops;
+  animation-delay: 0s;
+  animation-duration: .4s;
 }
 
-.button:hover {
-  color: #c9f8ff;
-  text-shadow: 0px 0px 20px #3de5ff;
-}
 
-
-/* below is popup window and mask styles */
+/*
+ * Popups and Mask
+ */
 
 .popup-window {
   display: none;
