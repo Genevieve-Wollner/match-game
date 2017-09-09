@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- All images are of my own creation, fonts were obtained via google with
+instructions. -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/index.js"></script>
+  <title>Match Me!</title>
+</head>
+
+<body>
+  <section id="start-popup" class="popup-window">
+    <p class="start-prompt">
+      Welcome to my matching game!<br> The objective is to match all eight sets of cards. Flip a card by clicking on it. <br> Click &#8635; to restart.
+      <br><br> Good Luck!<br><br>
+      <a href="#" class="start">Start</a>
+    </p>
+  </section>
+  <h1 class="title">Match Me!</h1>
+  <main class="game-content">
+    <section class="game-board">
+      <section class="column">
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+      </section>
+      <section class="column">
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+      </section>
+      <section class="column">
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+      </section>
+      <section class="column">
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+        <div class="card-slot">
+          <img class="card-back" src="imgs/card_back.png" alt="the back of the card">
+        </div>
+      </section>
+    </section>
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <p class="timer">
+          <span id="minutes10s">0</span>
+          <span id="minutes1s">0</span> :
+          <span id="seconds10s">0</span>
+          <span id="seconds1s">0</span>
+        </p>
+      </div>
+      <div class="sidebar-content">
+        Moves:
+        <p class="move-counter">
+          <span id="tens-place">0</span>
+          <span id="counter">0</span>
+        </p>
+      </div>
+      <div class="sidebar-content">
+        <p class="stars">
+          <span class="star" id="star">&#9733;&#9733;&#9733;</span>
+        </p>
+      </div>
+      <div class="sidebar-content">
+        <p class="reset-button">
+          <span class="button" id="reset-button">&#8635;</span>
+        </p>
+      </div>
+    </aside>
+  </main>
+  <section id="winner-popup" class="popup-window">
+    <p class="winner-prompt">
+      <h1 class="h1-flicker">Congratulations!</h1> You've won!<br> Star Rating: <span id="final-star"></span><br> Moves: <span id="final-moves"></span><br> Time: <span id="final-time"></span>
+      <br><br>
+      <a href="#" class="replay">Play Again?</a>
+  </section>
+  <div class="mask">
+  </div>
+</body>
+
+</html>
